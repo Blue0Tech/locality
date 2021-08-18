@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Localities</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    
+    <script src="js/Tour.js"></script>
+    <script src="js/Expand.js"></script>
+  </head>
+  <body>
+    <a-scene id="main-scene">
+      
+
+      <a-sky id="main-container" radius="5000" color="#98DAFC"></a-sky>
+
+      <!-- Places Container -->
+      <a-entity id="places-container" tour expand></a-entity>
+
+      <!-- CAMERA -->
+      <a-camera id="camera" wasd-controls="enabled:false;">
+        <!-- App Title -->
+        <a-entity id="cursor" cursor position="0 0 -1" geometry="primitive:ring;radiusInner:0.02;radiusOuter:0.03" material="color:white;shader:flat"></a-entity>
+        <a-entity
+          id="app-title"
+          position="0 0.73 -1"
+          text="font: exo2bold; align: center; width: 2; color: #000; value: Welcome to North Birmingham!"
+        >
+          <a-entity
+            id="app-subtitle"
+            position="0 -0.1 0"
+            text="font: dejavu; align: center; width: 1; color: #0F184E; value: It's time to explore the localities"
+          ></a-entity>
+          <a-entity
+            id="backMsg"
+            position="0 -0.2 0"
+            text="font: dejavu; align: center; width: 1; color: #0F184E; value: Press B to go back"
+            visible='false'
+          ></a-entity>
+          <!-- <a-entity
+            id="desc"
+            position="0 -1.2 0"
+            text="font: dejavu; align: center; width: 1; color: #0F184E; value:"
+            visible='false'
+          ></a-entity> -->
+        </a-entity>
+
+        <!--Background-->
+        <a-entity> </a-entity>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
